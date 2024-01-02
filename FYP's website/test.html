@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dashboard | By Code Info</title>
+  <link rel="stylesheet" href="test.css" />
+  <!-- Font Awesome Cdn Link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <ul>
+        <li><a href="#" class="logo">
+          <img src="icon.png" alt="">
+          <span class="nav-item">DashBoard</span>
+        </a></li>
+        <li><a href="#" class="home-link">
+          <i class="fas fa-home"></i>
+          <span class="nav-item">Home</span>
+        </a></li>
+        <li><a href="#" class="classroom-link">
+          <i class="fas fa-tasks"></i>
+          <span class="nav-item">Classroom</span>
+        </a></li>
+        <li><a href="#" class="setup-link">
+          <i class="fas fa-camera"></i>
+          <span class="nav-item">Setup</span>
+        </a></li>
+        <li><a href="#" class="analysis-link">
+          <i class="fas fa-chart-bar"></i>
+          <span class="nav-item">Analysis</span>
+        </a></li>
+        <li><a href="" class="logout">
+          <i class="fas fa-sign-out-alt"></i>
+          <span class="nav-item">Log out</span>
+        </a></li>
+      </ul>
+    </nav>
+
+    <section id="main-section" class="main">
+      <div class="main-top">
+        <h1>Home</h1>
+      </div>
+      <div class="main-skills">
+        <div class="card">
+          <h3>Class</h3>
+          <p>Join Over 1 million Students.</p>
+        </div>
+        <div class="card">
+          <h3>Most Emotion</h3>
+          <p>Join Over 3 million Students.</p>
+        </div>
+        <div class="card">
+          <h3>Total Analysis</h3>
+          <p>Join Over 2 million Students.</p>
+        </div>
+        <div class="card">
+          <h3>Total Time</h3>
+          <p>Join Over 1 million Students.</p>
+        </div>
+      </div>
+
+      <section class="main-course">
+        <h1>My courses</h1>
+        <div class="course-box">
+          <ul>
+            <li class="active">In progress</li>
+            <li>explore</li>
+            <li>incoming</li>
+            <li>finished</li>
+          </ul>
+          <div class="course">
+            <div class="box">
+              <h3>HTML</h3>
+              <p>80% - progress</p>
+              <button>continue</button>
+              <i class="fab fa-html5 html"></i>
+            </div>
+            <div class="box">
+              <h3>CSS</h3>
+              <p>50% - progress</p>
+              <button>continue</button>
+              <i class="fab fa-css3-alt css"></i>
+            </div>
+            <div class="box">
+              <h3>JavaScript</h3>
+              <p>30% - progress</p>
+              <button>continue</button>
+              <i class="fab fa-js-square js"></i>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <section id="class-section" class="Class hidden">
+      <div class="main-top">
+        <h1>Classroom</h1>
+      </div>
+    </section>
+
+    <section id="setup-section" class="Class hidden">
+      <div class="main-top">
+        <h1>Setup</h1>
+      </div>
+    </section>
+
+    <section id="analysis-section" class="Class hidden">
+      <div class="main-top">
+        <h1>Analysis</h1>
+      </div>
+    </section>
+
+    <script>
+      const homeLink = document.querySelector('.home-link');
+      const classroomLink = document.querySelector('.classroom-link');
+      const setupLink = document.querySelector('.setup-link');
+      const analysisLink = document.querySelector('.analysis-link');
+      const mainSection = document.getElementById('main-section');
+      const classSection = document.getElementById('class-section');
+      const setupSection = document.getElementById('setup-section');
+      const analysisSection = document.getElementById('analysis-section');
+
+      homeLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        mainSection.classList.remove('hidden');
+        classSection.classList.add('hidden');
+        setupSection.classList.add('hidden');
+        analysisSection.classList.add('hidden');
+      });
+
+      classroomLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        mainSection.classList.add('hidden');
+        classSection.classList.remove('hidden');
+        setupSection.classList.add('hidden');
+        analysisSection.classList.add('hidden');
+      });
+
+      setupLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        mainSection.classList.add('hidden');
+        classSection.classList.add('hidden');
+        setupSection.classList.remove('hidden');
+        analysisSection.classList.add('hidden');
+      });
+
+      analysisLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        mainSection.classList.add('hidden');
+        classSection.classList.add('hidden');
+        setupSection.classList.add('hidden');
+        analysisSection.classList.remove('hidden');
+      });
+    </script>
+
+  </div>
+</body>
+</html>
